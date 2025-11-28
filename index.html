@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Manager</title>
+    <link rel="icon" type="image/png" href="clock.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="editor.html" class="nav-left">Goal Editor</a>
+            <h1 class="nav-center">Productivity Manager</h1>
+            <a href="whattodo.html" class="nav-right">What to Do?</a>
+        </nav>
+    </header>
+
+    <main class="home-main">
+        <section class="stats-overview">
+            <h2>Statistics & Overview</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Active Goals</h3>
+                    <p class="stat-number" id="activeGoals">0</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Completed Goals</h3>
+                    <p class="stat-number" id="completedGoals">0</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Habits Tracked</h3>
+                    <p class="stat-number" id="habitsCount">0</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Daily Tasks</h3>
+                    <p class="stat-number" id="dailyCount">0</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Completion Rate</h3>
+                    <p class="stat-number" id="completionRate">0%</p>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h3>Active Goals</h3>
+                <div id="activityList" class="activity-list">
+                    <p class="empty-state">No goals in progress. Start working on your goals!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

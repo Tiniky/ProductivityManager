@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Editor</title>
+    <link rel="icon" type="image/png" href="clock.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="editor.html" class="nav-left active">Goal Editor</a>
+            <a href="index.html" class="nav-center">
+                <h1>Productivity Manager</h1>
+            </a>
+            <a href="whattodo.html" class="nav-right">What to Do?</a>
+        </nav>
+    </header>
+
+    <main class="editor-main">
+        <section class="editor-section">
+            <h2>Manage Your Productivity</h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" data-tab="goals">Goals</button>
+                <button class="tab-button" data-tab="dailys">Dailys</button>
+                <button class="tab-button" data-tab="habits">Habits</button>
+            </div>
+
+            <div id="goals-tab" class="tab-content active">
+                <div class="add-item-form">
+                    <input type="text" id="goalInput" placeholder="Enter a new goal...">
+                    <button id="addGoalBtn">Add Goal</button>
+                </div>
+                <div id="goalsList" class="items-list">
+                    <p class="empty-state">No goals yet. Add your first goal above!</p>
+                </div>
+            </div>
+
+            <div id="dailys-tab" class="tab-content">
+                <div class="add-item-form">
+                    <button id="addDailyBtn">Add Daily</button>
+                </div>
+                <div id="dailysList" class="items-list">
+                    <p class="empty-state">No daily tasks yet. Add your first daily above!</p>
+                </div>
+            </div>
+
+            <div id="habits-tab" class="tab-content">
+                <div class="add-item-form">
+                    <button id="addHabitBtn">Add Habit</button>
+                </div>
+                <div id="habitsList" class="items-list">
+                    <p class="empty-state">No habits yet. Add your first habit above!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

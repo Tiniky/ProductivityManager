@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What to Do?</title>
+    <link rel="icon" type="image/png" href="clock.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="editor.html" class="nav-left">Goal Editor</a>
+            <a href="index.html" class="nav-center">
+                <h1>Productivity Manager</h1>
+            </a>
+            <a href="whattodo.html" class="nav-right active">What to Do?</a>
+        </nav>
+    </header>
+
+    <main class="whattodo-main">
+        <section class="todo-section">
+            <div class="todo-header">
+                <div>
+                    <h2>Today's Tasks</h2>
+                    <p class="date" id="todayDate"></p>
+                </div>
+                <div class="action-buttons">
+                    <button id="helpDecideBtn" class="action-btn">Help Decide</button>
+                    <button id="endDayBtn" class="action-btn end-day-btn">End Day</button>
+                </div>
+            </div>
+
+            <div class="todo-container">
+                <div class="todo-category">
+                    <h3>Active Tasks</h3>
+                    <div id="activeTasksList" class="todo-list">
+                        <p class="empty-state">No active tasks for today.</p>
+                    </div>
+                </div>
+
+                <div class="todo-category">
+                    <h3>Passive Habits to Track</h3>
+                    <div id="passiveHabitsList" class="todo-list">
+                        <p class="empty-state">No passive habits to track today.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
