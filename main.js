@@ -1,4 +1,3 @@
-// core
 class ProductivityData {
     constructor() {
         this.goals = [];
@@ -102,10 +101,8 @@ class ProductivityData {
     }
 }
 
-// global var
 let productivityData = null;
 
-// html related initialization - common
 document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     if (currentPage === 'index.html' || currentPage === '') {
@@ -193,9 +190,19 @@ function initializePage() {
     }
 }
 
-// home
 function initializeHomePage() {
     updateHomeStats();
+    if (!document.getElementById('advancedViewBtn')) {
+        const statsSection = document.querySelector('.stats-overview');
+        const advancedBtn = document.createElement('button');
+        advancedBtn.id = 'advancedViewBtn';
+        advancedBtn.className = 'advanced-btn';
+        advancedBtn.textContent = 'Advanced View';
+        advancedBtn.addEventListener('click', () => {
+            window.location.href = 'advanced.html';
+        });
+        statsSection.appendChild(advancedBtn);
+    }
     if (!document.getElementById('downloadPlanBtn')) {
         const statsSection = document.querySelector('.stats-overview');
         const downloadBtn = document.createElement('button');
@@ -273,7 +280,6 @@ function updateHomeStats() {
     }
 }
 
-// editor
 function initializeEditorPage() {
     const tabButtons = document.querySelectorAll('.tab-button');
     tabButtons.forEach(button => {
@@ -685,7 +691,6 @@ function activateHabit(habitId) {
     renderHabitsList();
 }
 
-// today
 function initializeWhatToDoPage() {
     const dateElement = document.getElementById('todayDate');
     if (dateElement) {

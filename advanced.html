@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕐 Productivity Manager - Advanced View</title>
+    <link rel="icon" type="image/png" href="clock.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="editor.html" class="nav-left">Goal Editor</a>
+            <a href="index.html" class="nav-center">
+                <h1>🕐 Productivity Manager</h1>
+            </a>
+            <a href="whattodo.html" class="nav-right">What to Do?</a>
+        </nav>
+    </header>
+
+    <main class="advanced-main">
+        <div class="content-wrapper">
+            <div class="advanced-title-container">
+                <h2>Advanced View</h2>
+                <button class="import-btn" onclick="openImportModal()">Import Missed Day</button>
+            </div>
+
+            <!-- Month Selector -->
+            <div class="selector-container" id="selectorContainer" style="display: none;">
+                <div class="selector-group">
+                    <label for="yearSelect">Year:</label>
+                    <select id="yearSelect">
+                        <option>Loading...</option>
+                    </select>
+                </div>
+                <div class="selector-group">
+                    <label for="monthSelect">Month:</label>
+                    <select id="monthSelect">
+                        <option>Loading...</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-plan" style="display: none;">
+                <p>Return when you have a productivity plan</p>
+            </div>
+
+            <!-- Goals Table -->
+            <div id="goalsSection" style="display: none;">
+                <div class="table-container">
+                    <div class="table-title">Goals Progress</div>
+                    <table id="goalsTable">
+                        <thead>
+                            <tr id="goalsHeaderRow">
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="goalsBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Habits Table -->
+            <div id="habitsSection" style="display: none;">
+                <div class="table-container">
+                    <div class="table-title">Habits Tracking</div>
+                    <table id="habitsTable">
+                        <thead>
+                            <tr id="habitsHeaderRow">
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="habitsBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Import Modal -->
+    <div class="import-modal" id="importModal">
+        <div class="import-modal-content">
+            <h3>Import Missed Day</h3>
+            
+            <div id="importError" class="import-error"></div>
+            <div id="importSuccess" class="import-success"></div>
+
+            <div class="import-form-group">
+                <label for="importDate">Select Date:</label>
+                <input type="date" id="importDate" onchange="handleDateChange()">
+            </div>
+
+            <div id="importWarning" class="import-warning visible">
+                ⚠️ You cannot create new goals or habits here. If you want to track a new goal/habit, create it outside of this view.
+            </div>
+
+            <div id="importFormatHelp" class="import-format-help">
+                <strong>Format:</strong><br>
+                D:Task Name,Goal Name<br>
+                H:Habit Name<br>
+                <br>
+                <strong>Example:</strong><br>
+                D:Practice scales,Learn Piano<br>
+                H:Morning Exercise
+            </div>
+
+            <div class="import-form-group">
+                <label for="importTextarea">Task Data:</label>
+                <textarea id="importTextarea" placeholder="Format: D:name,goal or H:name (one per line)"></textarea>
+            </div>
+
+            <div class="import-modal-buttons">
+                <button class="import-cancel-btn" onclick="closeImportModal()">Cancel</button>
+                <button class="import-submit-btn" id="importSubmitBtn" onclick="submitImportData()" disabled>Import</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="advanced.js"></script>
+</body>
+</html>
